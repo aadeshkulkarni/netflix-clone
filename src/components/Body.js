@@ -1,11 +1,15 @@
-import React from 'react'
 import Browse from './Browse'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './Login'
+import Home from './Home'
 
 const Body = () => {
     const appRouter = createBrowserRouter([{
         path: "/",
+        element: <Home />
+    },
+    {
+        path: "/login",
         element: <Login />
     },
     {
@@ -13,9 +17,10 @@ const Body = () => {
         element: <Browse />
     }
     ])
+
     return (
         <div>
-            <RouterProvider router={appRouter}/>
+            <RouterProvider router={appRouter} />
         </div>
     )
 }
