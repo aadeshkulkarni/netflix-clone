@@ -71,7 +71,7 @@ const Login = () => {
             <div className='absolute w-full h-full'>
                 <img className="brightness-50 w-full h-full object-cover" src={NETFLIX_BG_IMAGE} alt="logo" />
             </div>
-            <div className="rounded-lg bg-opacity-60 absolute sm:w-4/5 md:w-6/12 lg:w-1/5 lg:min-w-[300px]  text-white p-12 bg-black flex flex-col justify-center items-center m-auto my-36 right-0 left-0">
+            <div className="md:rounded-lg bg-opacity-60 absolute sm:w-4/5 md:w-6/12 lg:w-1/5 lg:min-w-[300px] text-white p-12 bg-black flex flex-col justify-center items-center m-auto my-36 right-0 left-0">
                 <h2 className="text-3xl p-4  text-left">{isSignInForm ? "Sign In" : "Sign Up"}</h2>
                 {!isSignInForm && <input ref={name} type="text" placeholder='Full Name' className="p-4 m-2 my-4 w-full bg-gray-800" />}
                 <input ref={email} type="text" placeholder='Email Address' className="p-4 m-2 my-4 w-full bg-gray-800" />

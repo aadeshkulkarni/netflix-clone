@@ -13,7 +13,6 @@ const GPTSearchbar = () => {
   const fetchMovie = async (movie) => {
     const data = await fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(movie)}&include_adult=false&language=en-US&page=1`, API_OPTIONS)
     const movieInfo = await data.json();
-    console.log(movieInfo)
     return movieInfo?.results
   }
 
@@ -32,7 +31,7 @@ const GPTSearchbar = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <form className="pt-[10%] w-1/2 grid grid-cols-12 gap-4" onSubmit={(e) => e.preventDefault()}>
+      <form className="pt-[15%] w-full md:w-1/2 grid grid-cols-12 gap-4 p-2" onSubmit={(e) => e.preventDefault()}>
         <input ref={searchText} type="text" className="py-2 px-4 col-span-8" placeholder={lang?.[langChosen]?.gptSearchPlaceholder} />
         <button onClick={handleGPTSearchClick} className="py-2 px-4 bg-red-700 text-white col-span-4 rounded-lg uppercase ">{lang?.[langChosen]?.search}</button>
       </form>

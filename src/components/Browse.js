@@ -17,7 +17,7 @@ const Browse = () => {
   useUpcomingMovies()
 
   return (
-    <div className="text-gray-400">
+    <div className="text-gray-400 min-h-screen h-screen flex flex-col justify-between">
       <Header />
       {showGPTSearch ? <GPTSearch /> : <>
         <MainContainer />
