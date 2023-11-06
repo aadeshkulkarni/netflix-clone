@@ -15,22 +15,14 @@ const Browse = () => {
   usePopularMovies()
   useTopRatedMovies()
   useUpcomingMovies()
-
+  
   return (
-    <div className="text-gray-400 min-h-screen h-screen flex flex-col justify-between">
+    <div className="flex flex-col justify-between h-screen min-h-screen text-gray-400">
       <Header />
       {showGPTSearch ? <GPTSearch /> : <>
         <MainContainer />
         <SecondaryContainer />
       </>}
-      {/* 
-      MainContainer
-        - Video background
-        - Video title
-      Secondary container
-        - Movie lists
-          - N Cards
-       */}
       <Footer />
     </div>
   )

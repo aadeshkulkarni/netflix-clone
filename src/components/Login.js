@@ -69,24 +69,24 @@ const Login = () => {
         <div className="">
             <Header />
             <div className='absolute w-full h-full'>
-                <img className="brightness-50 w-full h-full object-cover" src={NETFLIX_BG_IMAGE} alt="logo" />
+                <img className="object-cover w-full h-full brightness-50" src={NETFLIX_BG_IMAGE} alt="logo" />
             </div>
             <div className="md:rounded-lg bg-opacity-60 absolute sm:w-4/5 md:w-6/12 lg:w-1/5 lg:min-w-[300px] text-white p-12 bg-black flex flex-col justify-center items-center m-auto my-36 right-0 left-0">
-                <h2 className="text-3xl p-4  text-left">{isSignInForm ? "Sign In" : "Sign Up"}</h2>
-                {!isSignInForm && <input ref={name} type="text" placeholder='Full Name' className="p-4 m-2 my-4 w-full bg-gray-800" />}
-                <input ref={email} type="text" placeholder='Email Address' className="p-4 m-2 my-4 w-full bg-gray-800" />
-                <input ref={password} type="password" placeholder='Password' className="p-4 m-2 my-4 w-full bg-gray-800" />
-                <p className="text-red-500 text-sm text-left">{errorMessage}</p>
-                <button type="button" onClick={handleButtonClick} className="w-full p-3 m-4 bg-red-600 text-white rounded-md">{isSignInForm ? "Sign In" : "Sign Up"}</button>
-                <div className="flex items-center w-full justify-between text-xs text-gray-400 font-light">
+                <h2 className="p-4 text-3xl text-left">{isSignInForm ? "Sign In" : "Sign Up"}</h2>
+                {!isSignInForm && <input ref={name} type="text" placeholder='Full Name' className="w-full p-4 m-2 my-4 bg-gray-800" />}
+                <input ref={email} type="text" placeholder='Email Address' className="w-full p-4 m-2 my-4 bg-gray-800" />
+                <input ref={password} type="password" placeholder='Password' className="w-full p-4 m-2 my-4 bg-gray-800" />
+                <p className="text-sm text-left text-red-500">{errorMessage}</p>
+                <button type="button" onClick={handleButtonClick} className="w-full p-3 m-4 text-white bg-red-600 rounded-md">{isSignInForm ? "Sign In" : "Sign Up"}</button>
+                <div className="flex items-center justify-between w-full text-xs font-light text-gray-400">
                     <span>
                         <input className="bg-gray-800 accent-gray-400" type="checkbox" value="remember" /> Remember me</span>
                     <span>Need Help?</span>
                 </div>
-                <div className="w-full text-left py-4 text-md font-light">
+                <div className="w-full py-4 font-light text-left text-md">
                     <span className="text-gray-400">{isSignInForm ? "New to Netflix?" : "Already a member?"}  </span><span onClick={toggleSignInForm} className="text-white cursor-pointer hover:front-bold">{isSignInForm ? "Sign Up" : "Sign In"} now.</span>
                 </div>
-                <div className="text-gray-400 py-4 text-xs font-light">
+                <div className="py-4 text-xs font-light text-gray-400">
                     <span>This is not the real Netflix. It's a clone developed by Aadesh Kulkarni to learn how Netflix frontend works and is intended to show off his development skills.</span>
                 </div>
             </div>
