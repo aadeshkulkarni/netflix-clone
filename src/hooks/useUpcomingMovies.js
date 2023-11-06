@@ -13,6 +13,7 @@ const useUpcomingMovies = () => {
     }
     useEffect(() => {
         if(!upcomingMovies) getUpcomingMovies();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 }
 
