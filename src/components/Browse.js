@@ -8,17 +8,22 @@ import GPTSearch from './GPTSearch'
 import Header from './Header'
 import MainContainer from './MainContainer'
 import SecondaryContainer from './SecondaryContainer'
+import Shimmer from './Shimmer'
+import MovieDetails from './MovieDetails'
 
 const Browse = () => {
   const showGPTSearch = useSelector(store => store?.gpt?.showGPTSearch)
+  const showInfo = useSelector(store => store?.config?.showInfo)
   useNowPlayingMovies()
   usePopularMovies()
   useTopRatedMovies()
   useUpcomingMovies()
-  
+  if (showGPTSearch === undefined || showGPTSearch == null) return <Shimmer />
+
   return (
     <div className="flex flex-col justify-between h-screen min-h-screen text-gray-400">
       <Header />
+      {showInfo?.show && <MovieDetails />}
       {showGPTSearch ? <GPTSearch /> : <>
         <MainContainer />
         <SecondaryContainer />

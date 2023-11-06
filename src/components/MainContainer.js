@@ -8,10 +8,10 @@ const MainContainer = () => {
     const movies = useSelector(store => store?.movies?.nowPlayingMovies)
     if (movies === null || movies === undefined) return;
     const mainMovie = movies[0]
-    const { original_title, overview} = mainMovie
+    const { original_title, overview, id} = mainMovie
     return (
         <div className="pt-[30%] bg-black md:pt-0">
-            <VideoTitle title={original_title} overview={overview} isMute={isMute} setIsMute={setIsMute} />
+            <VideoTitle id={id} title={original_title} overview={overview} isMute={isMute} setIsMute={setIsMute} />
             <VideoBackground movieId={mainMovie.id} isMute={isMute} setIsMute={setIsMute}/>
         </div>
     )

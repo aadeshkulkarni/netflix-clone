@@ -28,13 +28,9 @@ const Login = () => {
         if (!isSignInForm) {
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
-                    // const user = userCredential.user;
                     updateProfile(auth.currentUser, {
                         displayName: name.current.value, photoURL: USER_IMAGE
                     }).then(() => {
-                        // const { uid, email, displayName, photoURL } = auth.currentUser;
-                        // dispatch(addUser({ uid, email, displayName, photoURL }))
-                        // navigate("/login")
                         setSignInForm(true)
                         password.current.value = ""
                     }).catch((error) => {
@@ -90,7 +86,6 @@ const Login = () => {
                     <span>This is not the real Netflix. It's a clone developed by Aadesh Kulkarni to learn how Netflix frontend works and is intended to show off his development skills.</span>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }
