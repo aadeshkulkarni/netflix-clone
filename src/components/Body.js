@@ -1,12 +1,11 @@
 import Browse from './Browse'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './Login'
-import Home from './Home'
 
 const Body = () => {
     const appRouter = createBrowserRouter([{
         path: "/",
-        element: <Home />
+        element: <Browse />
     },
     {
         path: "/login",
