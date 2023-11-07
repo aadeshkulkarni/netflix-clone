@@ -34,14 +34,12 @@ const MovieDetails = () => {
     async function getKeywords(movieId) {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/keywords`, API_OPTIONS)
         const data = await response.json()
-        // dispatch(changeShowInfo({ ...showInfo, movieKeywords:data}))
         return data;
     }
 
     async function getCredits(movieId) {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`, API_OPTIONS)
         const data = await response.json()
-        // dispatch(changeShowInfo({ ...showInfo, movieCredits:data }))
         return data;
     }
     const close = () => {
@@ -54,8 +52,8 @@ const MovieDetails = () => {
                 <img src={IMG_CDN_URL + movieDetails?.backdrop_path} className="w-full h-full" alt="backdrop" />
                 <div className="z-[600] absolute text-white text-3xl font-bold bottom-8 left-8 flex justify-center items-center">{movieDetails?.original_title}  <div onClick={onPlay} className="px-2 ml-4 text-white border border-white rounded-full cursor-pointer hover:opacity-40">▶️</div></div>
             </div>
-            <div className="grid grid-cols-12 p-4 text-white">
-                <div className="col-span-7 p-4">
+            <div className="p-4 text-white md:grid md:grid-cols-12">
+                <div className="p-4 md:col-span-7">
                     <div className="flex">
                         <div className="pr-4 font-bold text-green-600">98% Match</div>
                         <div>{movieDetails?.release_date?.split("-")[0]}</div>
@@ -68,15 +66,15 @@ const MovieDetails = () => {
                     </div>
                     <p className="text-sm">{movieDetails?.overview}</p>
                 </div>
-                <div className="col-span-5 p-4 text-sm">
+                <div className="p-4 text-sm md:col-span-5">
                     <div>
-                        <div className="grid grid-cols-12 mb-4">
-                            <div className="col-span-3 text-gray-300">Cast:</div>
-                            <div className="col-span-9">{movieCredits?.cast?.filter((a, i) => i < 4).map(credit => credit.name).join(", ")}</div>
+                        <div className="mb-4 md:grid md:grid-cols-12">
+                            <div className="text-gray-300 md:col-span-3">Cast:</div>
+                            <div className="md:col-span-9">{movieCredits?.cast?.filter((a, i) => i < 4).map(credit => credit.name).join(", ")}</div>
                         </div>
-                        <div className="grid grid-cols-12">
-                            <div className="col-span-3 text-gray-300">Genres:</div>
-                            <div className="col-span-9">{movieDetails?.genres?.map(genre => genre?.name).join(", ")}</div>
+                        <div className="md:grid md:grid-cols-12">
+                            <div className="text-gray-300 md:col-span-3">Genres:</div>
+                            <div className="md:col-span-9">{movieDetails?.genres?.map(genre => genre?.name).join(", ")}</div>
                         </div>
                     </div>
                 </div>
