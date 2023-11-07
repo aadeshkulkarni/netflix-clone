@@ -6,7 +6,7 @@ import { setPlay } from '../utils/slice/movieSlice'
 const VideoTitle = ({overview, title, isMute, setIsMute, id}) => {
   const dispatch = useDispatch()
   const viewInfoClicked = () =>{
-    id && changeShowInfo({show:true, movieId:id})
+    id && dispatch(changeShowInfo({show:true, movieId:id}))
   }
   return (
     <div className="w-screen aspect-video pt-[30%] md:pt-[20%] px-6 md:px-12 absolute text-white bg-gradient-to-r from-black">
