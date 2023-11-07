@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { changeShowInfo } from '../utils/slice/configSlice'
+import { setPlay } from '../utils/slice/movieSlice'
 
 const VideoTitle = ({overview, title, isMute, setIsMute, id}) => {
   const dispatch = useDispatch()
@@ -10,8 +11,8 @@ const VideoTitle = ({overview, title, isMute, setIsMute, id}) => {
         <p className="hidden w-1/4 py-2 text-lg md:inline-block md:py-6">{overview}</p>
         <div className="flex justify-between">
         <div className="flex p-2 md:p-4">
-            <button className="hover:bg-opacity-80 px-2 md:px-4 py-2 bg-white text-black rounded-md w-[100px] min-w-[100px] flex"><img src="./play.svg" alt="play-icon" className="mr-2"/>Play</button>
-            <button onClick={()=>{dispatch(changeShowInfo({show:true, movieId:id}))}}className="hidden hover:bg-opacity-80 ml-4 px-4 py-2 bg-gray-700 rounded-md w-[140px] min-w-[140px] text-white md:flex"><img src="./info.svg" alt="play-icon" className="mr-2"/>More Info</button>
+            <button onClick={()=>{dispatch(setPlay(id))}} className="hover:bg-opacity-80 px-2 md:px-4 py-2 bg-white text-black rounded-md w-[100px] min-w-[100px] flex"><img src="./play.svg" alt="play-icon" className="mr-2"/>Play</button>
+            <button onClick={()=>{dispatch(changeShowInfo({show:true, movieId:id}))}} className="hidden hover:bg-opacity-80 ml-4 px-4 py-2 bg-gray-700 rounded-md w-[140px] min-w-[140px] text-white md:flex"><img src="./info.svg" alt="play-icon" className="mr-2"/>More Info</button>
         </div>
         <div className="flex p-2 md:p-4">
             <img 

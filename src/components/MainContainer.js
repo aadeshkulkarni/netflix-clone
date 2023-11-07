@@ -7,7 +7,7 @@ const MainContainer = () => {
     const [isMute, setIsMute] = useState(true)
     const movies = useSelector(store => store?.movies?.nowPlayingMovies)
     if (movies === null || movies === undefined) return;
-    const mainMovie = movies[0]
+    const mainMovie = movies[Math.floor(Math.random()*20)]
     const { original_title, overview, id} = mainMovie
     return (
         <div className="pt-[30%] bg-black md:pt-0">
